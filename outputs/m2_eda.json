@@ -1,0 +1,187 @@
+{
+  "reference_date": "2017-12-31",
+  "reference_is_official_snapshot": false,
+  "rows": 8800,
+  "unique_ids": 8800,
+  "stage_counts": {
+    "Won": 4238,
+    "Lost": 2473,
+    "Engaging": 1589,
+    "Prospecting": 500
+  },
+  "open": {
+    "n": 2089,
+    "stages": [
+      "Engaging",
+      "Prospecting"
+    ]
+  },
+  "closed": {
+    "n": 6711,
+    "stages": [
+      "Won",
+      "Lost"
+    ]
+  },
+  "missing": {
+    "account_by_stage": {
+      "Won": 0,
+      "Engaging": 1088,
+      "Lost": 0,
+      "Prospecting": 337
+    },
+    "engage_date_by_stage": {
+      "Won": 0,
+      "Engaging": 0,
+      "Lost": 0,
+      "Prospecting": 500
+    },
+    "close_date_open": 2089,
+    "close_value_open": 2089
+  },
+  "won_only": {
+    "n": 4238,
+    "mean_close_value_by_product": {
+      "GTK 500": 26707.466666666667,
+      "GTX Basic": 545.6426229508197,
+      "GTX Plus Basic": 1080.0535987748851,
+      "GTX Plus Pro": 5489.876826722339,
+      "GTX Pro": 4815.60768175583,
+      "MG Advanced": 3388.9709480122324,
+      "MG Special": 55.19293820933165
+    },
+    "by_product": {
+      "GTK 500": {
+        "n": 15,
+        "mean": 26707.466666666667
+      },
+      "GTX Basic": {
+        "n": 915,
+        "mean": 545.6426229508197
+      },
+      "GTX Plus Basic": {
+        "n": 653,
+        "mean": 1080.0535987748851
+      },
+      "GTX Plus Pro": {
+        "n": 479,
+        "mean": 5489.876826722339
+      },
+      "GTX Pro": {
+        "n": 729,
+        "mean": 4815.60768175583
+      },
+      "MG Advanced": {
+        "n": 654,
+        "mean": 3388.9709480122324
+      },
+      "MG Special": {
+        "n": 793,
+        "mean": 55.19293820933165
+      }
+    }
+  },
+  "closed_all": {
+    "n": 6711,
+    "mean_close_value_by_product": {
+      "GTK 500": 16024.48,
+      "GTX Basic": 347.6761838440111,
+      "GTX Plus Basic": 671.0513796384396,
+      "GTX Plus Pro": 3529.7328859060403,
+      "GTX Pro": 3060.66085440279,
+      "MG Advanced": 2044.6374538745388,
+      "MG Special": 35.78740801308258
+    },
+    "by_product": {
+      "GTK 500": {
+        "n": 25,
+        "mean": 16024.48
+      },
+      "GTX Basic": {
+        "n": 1436,
+        "mean": 347.6761838440111
+      },
+      "GTX Plus Basic": {
+        "n": 1051,
+        "mean": 671.0513796384396
+      },
+      "GTX Plus Pro": {
+        "n": 745,
+        "mean": 3529.7328859060403
+      },
+      "GTX Pro": {
+        "n": 1147,
+        "mean": 3060.66085440279
+      },
+      "MG Advanced": {
+        "n": 1084,
+        "mean": 2044.6374538745388
+      },
+      "MG Special": {
+        "n": 1223,
+        "mean": 35.78740801308258
+      }
+    }
+  },
+  "win_rate_among_closed": 0.6315005215318135,
+  "open_age_since_engage": {
+    "n_known": 1589,
+    "n_missing": 500,
+    "negative_count": 0,
+    "min_days": 9,
+    "median_days": 165.0,
+    "max_days": 423
+  },
+  "closed_duration_descriptive": {
+    "n_known": 6711,
+    "n_missing": 0,
+    "negative_count": 0,
+    "mean_days": 47.98539710922366,
+    "median_days": 45.0
+  },
+  "interpretation": {
+    "observations": [
+      "Stage counts and missingness describe this dataset at the declared cutoff.",
+      "Won-only close values are separated from averages across all closed rows.",
+      "Open age is elapsed time since engage_date when known, not inactivity or last contact."
+    ],
+    "commercial_hypotheses": [
+      "Engaging may represent greater commercial maturity than Prospecting, but transition history is unavailable.",
+      "Product reference price may be useful context, but is not expected revenue."
+    ],
+    "unsupported_signals": [
+      "Closed duration is not used as open-deal urgency.",
+      "Missing account is not treated as poor account quality.",
+      "No causal or predictive claim is made from seller, sector, region, or product differences."
+    ]
+  },
+  "ingestion_diagnostics": {
+    "raw_rows": {
+      "accounts": 85,
+      "products": 7,
+      "sales_pipeline": 8800,
+      "sales_teams": 35
+    },
+    "pipeline_unique_ids": 8800,
+    "duplicate_opportunity_ids": 0,
+    "product_alias_counts": {
+      "GTXPro": 1480
+    },
+    "missing_account_rows": 1425,
+    "missing_engage_date_rows": 500,
+    "invalid_dates": {
+      "engage_date": 0,
+      "close_date": 0
+    },
+    "invalid_close_value_rows": 0,
+    "unmatched_products": [],
+    "unmatched_sales_agents": [],
+    "unmatched_accounts": [],
+    "rows_after_joins": 8800,
+    "unmatched_product_join_rows": 0,
+    "unmatched_sales_team_join_rows": 0,
+    "unmatched_account_join_rows": 1425,
+    "open_rows": 2089
+  }
+}
+
