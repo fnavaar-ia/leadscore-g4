@@ -84,6 +84,20 @@ def _display_warnings(warnings: list[str]) -> list[str]:
     return display
 
 
+def _friendly_factor(factor: dict[str, object], stage: str) -> tuple[str, str, int]:
+    """Apresenta os fatores calculados pelo backend em linguagem comercial."""
+
+    name = str(factor.get("name", ""))
+    contribution = int(factor.get("contribution", 0))
+    if name == "base":
+        return "Ponto de partida", "A oportunidade entra na fila com uma pontuação inicial.", contribution
+    if name == "deal_stage":
+        if stage == "Engaging":
+            return "Estágio comercial", "O estágio atual é Engaging, indicando uma oportunidade em fase de maior acompanhamento.", contribution
+        return "Estágio comercial", "O estágio atual é Prospecting, indicando uma oportunidade em fase inicial de acompanhamento.", contribution
+    return name.replace("_", " ").title(), str(factor.get("reason", "Critério aplicado à oportunidade.")), contribution
+
+
 def _inject_style() -> None:
     st.markdown(
         """
@@ -291,6 +305,11 @@ def _render_detail(filtered: pd.DataFrame) -> None:
         b.write(f"**Produto**  \n{_display_label(detail['product'])}")
         a.write(f"**Vendedor**  \n{_display_label(detail['sales_agent'])}")
         b.write(f"**Manager / Região**  \n{_display_label(detail['manager'])} · {_display_label(detail['regional_office'])}")
+        st.markdown("#### Por que esta oportunidade tem esta prioridade?")
+        st.caption("Os motivos abaixo são os fatores calculados para esta oportunidade.")
+        for factor in detail["score_factors"]:
+            label, reason, contribution = _friendly_factor(factor, str(detail["deal_stage"]))
+            st.markdown(f"- **{label} · +{contribution}** — {reason}")
         display_warnings = _display_warnings(detail["warnings"])
         if display_warnings:
             st.warning("Informações a revisar: " + "; ".join(display_warnings))

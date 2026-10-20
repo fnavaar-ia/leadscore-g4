@@ -24,6 +24,7 @@ O projeto foi desenvolvido para apoiar a rotina de vendas e Revenue Operations, 
 - Gráficos interativos por estágio, região, manager e produto.
 - Fila priorizada com posição global e contexto da oportunidade.
 - Ficha individual com prioridade, conta, produto, vendedor, manager e região.
+- Motivos da prioridade apresentados na ficha de cada oportunidade.
 - Aba de cobertura dos dados para apoiar a revisão da carteira.
 - Exportação da seleção filtrada em CSV.
 
