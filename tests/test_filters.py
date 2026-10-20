@@ -38,8 +38,15 @@ def test_no_match_is_empty(queue):
     assert result.empty
 
 
+def test_extended_filters_and_search(queue):
+    enriched = queue.assign(product=["GTK 500", "MG Special", "GTK 500"], deal_stage=["Engaging", "Prospecting", "Engaging"], account=["Acme", "Beta", None])
+
+    result = filter_queue(enriched, products=["GTK 500"], stages=["Engaging"], min_score=70, search_text="acme")
+
+    assert result["opportunity_id"].tolist() == ["a"]
+
+
 def test_missing_filter_column_is_reported(queue):
     with pytest.raises(ValueError, match="manager"):
         filter_queue(queue.drop(columns=["manager"]))
-
 
