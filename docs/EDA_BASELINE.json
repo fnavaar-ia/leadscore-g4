@@ -1,0 +1,36 @@
+{
+  "reference_date_demo": "2017-12-31",
+  "reference_is_official_snapshot": false,
+  "rows": 8800,
+  "unique_ids": 8800,
+  "stages": {
+    "Won": 4238,
+    "Lost": 2473,
+    "Engaging": 1589,
+    "Prospecting": 500
+  },
+  "open_count": 2089,
+  "closed_count": 6711,
+  "win_rate_closed": 0.6315005215318135,
+  "missing_account_by_stage": {
+    "Engaging": 1088,
+    "Prospecting": 337
+  },
+  "missing_engage_by_stage": {
+    "Prospecting": 500
+  },
+  "raw_GTXPro_rows": 1480,
+  "max_close_date": "2017-12-31",
+  "min_engage_date": "2016-10-20",
+  "won_only_mean_close_value_by_product": {
+    "GTK 500": 26707.466666666667,
+    "GTX Basic": 545.6426229508197,
+    "GTX Plus Basic": 1080.0535987748851,
+    "GTX Plus Pro": 5489.876826722339,
+    "GTXPro": 4815.60768175583,
+    "MG Advanced": 3388.9709480122324,
+    "MG Special": 55.19293820933165
+  },
+  "negative_open_age_count": 0
+}
+
