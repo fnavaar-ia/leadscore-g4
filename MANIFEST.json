@@ -1,0 +1,35 @@
+{
+  "description": "Kit documental e dados; sem implementação do app.",
+  "sha256": {
+    ".gitignore": "3e7c3c90233e22f63afce51be4ff045a80aaa702d6e66cc62a30053073d51d87",
+    "AGENTS.md": "e93481848760008ad9319c2da849b838e2142bd33cd7ac5f85d3c7ebbdbeb63f",
+    "README.md": "8bb48b54070eecc10ce982755a087299f64c9ef0f16e02623e028d14ec2ef84a",
+    "START_HERE.md": "6f86a7d49c62e7fbf718f5ed060cb61b932662611faaff5548c044e28bf8ca15",
+    "data/raw/accounts.csv": "e5242324768a563fc632cddfed49a29acbbf2892b8a3c6453cc9650de9ae0358",
+    "data/raw/metadata.csv": "22b34e498d07e3d7f322afdbf81d70a5dc0a389792944e50ca2af86a3597f0af",
+    "data/raw/products.csv": "7c1c8cbbdb6d4c286902e1985eeb529a36366d6a43f43cd4a93c4b1da2a6eb84",
+    "data/raw/sales_pipeline.csv": "825ce8f6c32d4009548b468df3173d55a46fd73f2531f532c5459371dc52adf2",
+    "data/raw/sales_teams.csv": "aeff1272ebe196f5a27e3fc0578aa27abf48ed9ae461aa344fb95990e5ad8bd1",
+    "docs/ACEITE.md": "def2bc4affadad46647fa55b1ae97ab6569934b776dd1de1d3cc41f7319a0ae8",
+    "docs/ARQUITETURA.md": "c6b5d4727fadad52bccd40df4f19ed08f6e8c92e40e7788602c9905f16f8e87a",
+    "docs/DADOS.md": "c25a35b0cd082a86ad29b8dc4a54aa26927b59321ce995228d86e76a06a217ee",
+    "docs/DECISOES.md": "42be3c69dd43b08107808234c88294cc2cdf38da3712141506ab35a1fc79e689",
+    "docs/EDA_BASELINE.json": "350a3be39d689df32b210ab2bb50a271d4361284a0e6f9779bc2263d9eb1b7e1",
+    "docs/PRD.md": "f8ac5f9cbe2b40e586019a4e36851cad913500c6ec098267d0cdf20987687c8f",
+    "docs/SCORING.md": "fc6a753a38bea2980b1be24dd0d7e9da8c211b380024edda33aead5fd158800e",
+    "process-log/README.md": "aa92d6101a6e5931289fc035de9e065d20a04eada6c19ae4746c657dc55d617d",
+    "process-log/TEMPLATE.md": "7b403ab83d98002f90aa55f52d58c0c785554ffa29058e52aea0070e5253d11f",
+    "prompts/01-M1-ingestao.md": "c254cda7dc5449bb81d34f8061dcf292a3ca60ebee7b26af1d5987400313ba56",
+    "prompts/02-M2-analise.md": "540119904c59c1126171bed8f962b4361205a0b5e97b5deab641a350d6e1f63a",
+    "prompts/03-M3-scoring.md": "f53871c323d304bbfa65b6bb1b0719654d71af7e2b99e042a12d912793ca7e02",
+    "prompts/04-M4-streamlit.md": "145fd1694740947c79d9fcffd92b63799a1518f6d2659cefde6b1cd19b45eb4e",
+    "prompts/05-M5-validacao.md": "fd3b7f14a415444a813e55f8e6b1e34d4f2fb53aeb7b29d9f375d890b466067c",
+    "prompts/06-M6-entrega.md": "59c0312ca776ac42e556c1db3adf25484cc8fefe673d5d36958c258ad268ee8b",
+    "references/CONTRIBUTING.md": "f34711723bc0732b4eed4d9dab1b951f411296d8f25c5385d4bfb6f4f348d642",
+    "references/challenge.md": "0f88457c166c0b945ef645dfb25ae35021d38a6dab92e4af613ddcc8253dd466",
+    "references/submission-guide.md": "2320b0143536d091970cbe7d6f4bf35c66611665da8f0817e2b593c2ebcefaf8",
+    "references/submission-template.md": "a3c85034f355ae8b1a3c44c1b1739ccf34d0e4bb0cab8bc8b63c541f0a6e4b25",
+    "requirements.txt": "942ad622a68ff8ebc9b434810034d5c6f42c8c15ab87e31daad22a4cc8f98b61"
+  }
+}
+
