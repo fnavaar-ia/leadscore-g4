@@ -1,37 +1,81 @@
-# Lead Scorer — kit de recriação em Streamlit
+# LeadScore G4
 
-Este pacote reúne contexto, dados reais, PRD e prompts para construir o projeto no Antigravity IDE. **Não contém aplicativo implementado.** Não usa configurações proprietárias de IDE: são arquivos Markdown e CSV portáveis. Não pressupõe que AGENTS.md seja carregado automaticamente; peça explicitamente ao agente para lê-lo.
+Painel comercial interativo para explorar e priorizar oportunidades abertas a partir de dados reais de CRM.
 
-## Como começar
-1. Extraia o ZIP e abra a pasta `lead-scorer-antigravity` no IDE.
-2. Abra `START_HERE.md` e copie o prompt inicial para a conversa com o agente.
-3. Execute um módulo por vez, seguindo os arquivos de `prompts/`.
-4. Aprove a política de scoring antes de implementar M3.
-5. Registre decisões e evidências reais no process log durante o trabalho.
+## Sobre o projeto
 
-## O que existe
-- `docs/PRD.md`: especificação modular, adaptada para Streamlit.
-- `docs/ARQUITETURA.md`: estrutura proposta, responsabilidades e contratos.
-- `docs/DADOS.md`: schema, referências, cuidados e proveniência.
-- `docs/EDA_BASELINE.json`: baseline recalculada dos CSVs, sem inferência preditiva.
-- `docs/SCORING.md`: restrições e decisões ainda pendentes; não é uma fórmula aprovada.
-- `docs/ACEITE.md`: checklist verificável.
-- `docs/DECISOES.md`: decisões confirmadas e pendências.
-- `references/`: cópias dos requisitos oficiais, guia e template.
-- `data/raw/`: quatro tabelas do dataset e metadata.csv, sem alteração dos originais.
-- `prompts/`: sequência de execução M1–M6.
-- `process-log/`: modelo para registrar evidências.
+O LeadScore G4 organiza uma carteira de oportunidades em um dashboard visual e acionável. A aplicação permite filtrar a carteira por vendedor, manager, região, estágio e produto, consultar indicadores consolidados, explorar gráficos interativos, abrir o detalhe de uma oportunidade e exportar uma seleção em CSV.
 
-## Stack escolhida
-Python + pandas + Streamlit; pytest para testes. Dependências propostas em `requirements.txt`, sem versões inventadas. Validar compatibilidade no ambiente de destino e registrar versões efetivamente testadas.
+O projeto foi desenvolvido para apoiar a rotina de vendas e Revenue Operations, oferecendo uma visão rápida de onde concentrar a revisão comercial e quais informações ainda precisam de atenção.
 
-Após o agente implementar os arquivos propostos, a rotina esperada será:
-```sh
-python -m pip install -r requirements.txt
-python -m pytest -q
-python -m streamlit run app.py
+## Acesso rápido
+
+- **Aplicação online:** [abrir o LeadScore G4 no Streamlit](https://leadscore-g4-jk9owsqxk5hcymg8sbevjp.streamlit.app/)
+- **Dashboard:** visão executiva, fila de oportunidades, detalhe individual e cobertura dos dados.
+- **Dados:** pipeline histórico real com dimensões de contas, produtos e equipe comercial.
+
+## Funcionalidades
+
+- Dashboard em modo escuro, responsivo e orientado à leitura executiva.
+- Cards com volume da seleção, prioridades, valor de catálogo e informações pendentes.
+- Filtros combináveis por vendedor, manager, região, estágio e produto.
+- Busca por oportunidade, conta, produto ou vendedor.
+- Faixa ajustável de prioridade.
+- Gráficos interativos por estágio, região, manager e produto.
+- Fila priorizada com posição global e contexto da oportunidade.
+- Ficha individual com prioridade, conta, produto, vendedor, manager e região.
+- Aba de cobertura dos dados para apoiar a revisão da carteira.
+- Exportação da seleção filtrada em CSV.
+
+## Como executar localmente
+
+Requer Python 3.15 ou compatível.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run app.py
 ```
-**Hoje esses comandos de teste e app não têm implementação para executar neste kit.** O agente deve criá-la nos módulos correspondentes.
 
-Não copiar este README como se fosse a submissão final: usar `references/submission-template.md`, preencher resultados reais e respeitar a pasta pessoal exigida pelo desafio.
+Para validar o projeto:
 
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+## Dados e escopo
+
+O projeto utiliza o dataset público [CRM Sales Predictive Analytics](https://www.kaggle.com/datasets/agungpambudi/crm-sales-predictive-analytics), com licença declarada como CC0 no challenge.
+
+Os CSVs originais estão em `data/raw/`. A aplicação preserva oportunidades sem conta e apresenta campos ausentes para revisão. A referência histórica da demonstração é 31/12/2017.
+
+O sistema é uma ferramenta de apoio à revisão comercial. Ele não substitui o CRM, não envia mensagens, não cria tarefas e não realiza integrações externas durante a execução.
+
+## Estrutura principal
+
+```text
+app.py                         # dashboard Streamlit
+src/ingest.py                  # ingestão e preparação dos dados
+src/analyze.py                 # análise reproduzível
+src/scoring.py                 # priorização versionada
+src/filters.py                 # filtros da fila
+config/scoring_policy.json     # configuração da política
+data/raw/                      # dados originais
+tests/                         # testes automatizados
+outputs/                       # saídas derivadas
+process-log/                   # registros do desenvolvimento
+M6_DOCUMENTACAO_COMPLETA.md   # documentação consolidada
+```
+
+## Documentação
+
+- [Documentação completa do projeto e do M6](M6_DOCUMENTACAO_COMPLETA.md)
+- [Política de priorização](config/scoring_policy.json)
+- [Checklist de aceite](docs/ACEITE.md)
+- [Arquitetura](docs/ARQUITETURA.md)
+- [Dicionário e cuidados dos dados](docs/DADOS.md)
+- [Registros do processo](process-log/)
+
+## Stack
+
+Python, pandas, Streamlit, Plotly e pytest.
